@@ -1,0 +1,40 @@
+.App{
+text-align: center;
+}
+
+.App_Title{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height:42.26px;
+  letter-spacing:-4.5%;
+  text-align:center;
+  margin-top: 50px;
+  color: #333333;
+}
+
+.App_Nav{
+  border: 2px solid red;
+  text-align:center;
+  margin: 70px auto 20px auto;
+  padding: 10px 0;
+  border-bottom: 2px solid #bdbdbd;
+  width:50%;
+}
+
+.App_Nav_Link{
+  margin:5px 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height:17.07px;
+  color: #333333;
+  text-decoration: none;
+  transition: 200ms;
+  padding: 10px 0px;
+}
+
+.App_Nav_Link:hover{
+  border-bottom: 5px solid #2F80ED;
+  border-radius: 4px;
+}
