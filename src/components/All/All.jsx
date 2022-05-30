@@ -10,7 +10,7 @@ function All() {
       <ul className="all_task-list">
         <li>
           <input type="checkbox" id="task1" />
-          <label for="task1">Do Coding challneges</label>
+          <label for="task1">Do Coding challenges</label>
         </li>
       </ul>
     </div>
