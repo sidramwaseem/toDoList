@@ -6,7 +6,13 @@ import Form from "../Form/Form.jsx";
 function All() {
   return (
     <div className="All-container">
-    <Form />
+      <Form />
+      <ul className="all_task-list">
+        <li>
+          <input type="checkbox" id="task1" />
+          <label for="task1">Do Coding challneges</label>
+        </li>
+      </ul>
     </div>
   );
 }
