@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route
             path="/:usernames"
-            element={<All task={task} handleChange={handleChange} />}
+            element={<All task={task} handleChange={handleChange}/>}
           ></Route>
           <Route path="/active" element={<Active />}></Route>
           <Route path="/completed" element={<Completed />}></Route>
