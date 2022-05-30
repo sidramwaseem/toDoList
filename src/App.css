@@ -50,6 +50,11 @@ position: relative;
   text-decoration: none;
   padding: 10px 10px;
   position:relative;
+  transition:300ms;
+}
+
+.App_Nav_Link:hover{
+  color: #fff;
 }
 
 .App_Nav_Link::before {  
@@ -69,6 +74,7 @@ position: relative;
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0 0 0 0;
   background: #2F80ED;
+  box-shadow:0px 2px 6px rgba(127, 177, 243, 0.4);
   border-radius: 12px;
   z-index: -1;
   transition: transform .3s ease;
