@@ -15,7 +15,7 @@ border: 2px solid black;
 }
 
 .App_Nav{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   text-align:center;
   margin: 70px auto 20px auto;
   padding: 10px 0;
