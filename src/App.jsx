@@ -20,7 +20,7 @@ function App() {
           <Route path="/active" element={<Active />}></Route>
           <Route path="/completed" element={<Completed />}></Route>
         </Routes>
-        <footer>
+        <footer className="footer" >
           <p>
             Crated by{" "}
             <a
