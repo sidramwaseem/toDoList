@@ -6,12 +6,6 @@ import Completed from "./components/Completed/Completed";
 import "./App.css";
 
 function App() {
-  const [task, setTask] = React.useState("");
-
-  function handleChange(event) {
-    setTask(event.target.value);
-  }
-
   return (
     <div className="App">
       <Router className="App_Router">
@@ -30,7 +24,7 @@ function App() {
         <Routes>
           <Route
             path="/:usernames"
-            element={<All task={task} handleChange={handleChange}/>}
+            element={<All/>}
           ></Route>
           <Route path="/active" element={<Active />}></Route>
           <Route path="/completed" element={<Completed />}></Route>
