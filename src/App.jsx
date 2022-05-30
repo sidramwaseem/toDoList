@@ -6,21 +6,36 @@ import Completed from "./components/Completed/Completed";
 import "./App.css";
 
 function App() {
+
+  const [task ,setTask] = React.useState("");
+
+  function handleChange(event){
+    setTask(event.target.value);
+  }
+  
   return (
     <div className="App">
       <Router className="App_Router">
         <h1 className="App_Title">#justDo-It</h1>
         <nav className="App_Nav">
-          <Link to="/all" className="App_Nav_Link">All</Link>
-          <Link to="/active" className="App_Nav_Link">Active</Link>
-          <Link to="/completed" className="App_Nav_Link">Completed</Link>
+          <Link to="/all" className="App_Nav_Link">
+            All
+          </Link>
+          <Link to="/active" className="App_Nav_Link">
+            Active
+          </Link>
+          <Link to="/completed" className="App_Nav_Link">
+            Completed
+          </Link>
         </nav>
         <Routes>
-          <Route path="/:usernames" element={<All />}></Route>
+          <Route path="/:usernames" element={<All 
+            task={task} handleChange={handleChange}
+            />}></Route>
           <Route path="/active" element={<Active />}></Route>
           <Route path="/completed" element={<Completed />}></Route>
         </Routes>
-        <footer className="footer" >
+        <footer className="footer">
           <p>
             Crated by{" "}
             <a
