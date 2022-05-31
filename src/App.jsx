@@ -30,7 +30,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/all" element={<All task={task} handleChange={handleChange} />}></Route>
-          <Route path="/active" element={<Active />}></Route>
+          <Route path="/active" element={<Active handleChange={handleChange} />}></Route>
           <Route path="/completed" element={<Completed />}></Route>
         </Routes>
         <footer className="footer">
