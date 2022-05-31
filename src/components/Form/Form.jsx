@@ -11,7 +11,7 @@ function Form(props) {
           name="task"
           onChange={props.handleChange}
         />
-        <button type="button" onClick={props.handleClick}>
+        <button type="button">
           Add
         </button>
       </form>
