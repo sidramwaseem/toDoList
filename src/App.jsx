@@ -6,11 +6,23 @@ import Completed from "./components/Completed/Completed";
 import "./App.css";
 
 function App() {
-  const [task, setTask] = React.useState("");
+  const [task, setTask] = React.useState([
+    {
+      task: "",
+      checkbox: false,
+    },
+  ]);
 
-  function handleChange(event){
-    console.log(event.target.value)
-    setTask(event.target.value)
+  function handleChange(event) {
+    console.log(event.target.value);
+    setTask(event.target.value);
+  }
+
+  function addTask() {
+    const tempTask = [...task];
+    tempTask.push(setTask);
+
+    setTask(tempTask);
   }
 
   return (
@@ -29,8 +41,16 @@ function App() {
           </Link>
         </nav>
         <Routes>
-          <Route path="/all" element={<All task={task} handleChange={handleChange} />}></Route>
-          <Route path="/active" element={<Active handleChange={handleChange} />}></Route>
+          <Route
+            path="/all"
+            element={
+              <All task={task} handleChange={handleChange} addTask={addTask} />
+            }
+          ></Route>
+          <Route
+            path="/active"
+            element={<Active handleChange={handleChange} />}
+          ></Route>
           <Route path="/completed" element={<Completed />}></Route>
         </Routes>
         <footer className="footer">
