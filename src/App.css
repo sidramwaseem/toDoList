@@ -84,5 +84,6 @@ position: relative;
 .footer{
   position:absolute;
   bottom:0;
-  left: 45%;
+  width: 100%;
+  text-align:center;
 }
