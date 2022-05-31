@@ -22,8 +22,6 @@ function App() {
     setTask(event.target.value);
   }
 
-
-
   return (
     <div className="App">
       <Router className="App_Router">
@@ -42,9 +40,7 @@ function App() {
         <Routes>
           <Route
             path="/all"
-            element={
-              <All task={task} handleChange={handleChange}/>
-            }
+            element={<All task={task} handleChange={handleChange} />}
           ></Route>
           <Route
             path="/active"
