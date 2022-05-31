@@ -22,7 +22,7 @@ function App() {
           </Link>
         </nav>
         <Routes>
-          <Route path="/" element={<All />}></Route>
+          <Route path="/all" element={<All />}></Route>
           <Route path="/active" element={<Active />}></Route>
           <Route path="/completed" element={<Completed />}></Route>
         </Routes>
