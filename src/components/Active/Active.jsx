@@ -1,10 +1,10 @@
 import React from "react";
 import Form from "../Form/Form.jsx";
 
-function Active() {
+function Active(props) {
   return (
     <div className="Active-container">
-      <Form />
+      <Form handleChange={props.handleChange}/>
     </div>
   );
 }
