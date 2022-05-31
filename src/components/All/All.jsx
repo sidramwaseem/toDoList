@@ -1,7 +1,7 @@
 import React from "react";
 import "./All.css";
 import Form from "../Form/Form.jsx";
-import Task from "../Task/Task.jsx"
+import Task from "../Task/Task.jsx";
 // import {useParams} from 'react-router-dom';
 
 function All(props) {
