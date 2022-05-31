@@ -1,13 +1,15 @@
 import React from "react";
 
 function Task(props) {
+  const {task} = props;
+  // const taskItem = 
   return (
     <ul className="all_task-list">
-      {props.task?.length > 0 ? (
-        props.task.map((task, index) => (
-          <li>
-            <input type="checkbox" id={index} />
-            <label htmlFor={index}>{task}</label>
+      {task?.length > 0 ? (
+        task.map((task) => (
+          <li key={task.id}>
+            <input type="checkbox" id={task.id} />
+            <label htmlFor={task.id}>{task.text}</label>
           </li>
         ))
       ) : (
