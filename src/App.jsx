@@ -6,12 +6,7 @@ import Completed from "./components/Completed/Completed";
 import "./App.css";
 
 function App() {
-  const [task, setTask] = React.useState([
-    {
-      task: "",
-      checkbox: false,
-    },
-  ]);
+  const [task, setTask] = React.useState([""]);
 
   function handleChange(event) {
     console.log(event.target.value);
