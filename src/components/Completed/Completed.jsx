@@ -1,12 +1,10 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom"
+import TaskList from "../TaskList/TaskList.jsx"
 
-function Completed() {
-  let navigate = useNavigate();
+function Completed(props) {
   return (
     <div>
-      <p>Thhis is COMPLETED page</p>
-      <button onClick={()=>{navigate("/active")}}>Go to active page</button>
+    {!props.isDone && <TaskList task={props.task} />}
     </div>
   )
 }
