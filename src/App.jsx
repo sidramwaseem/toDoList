@@ -6,6 +6,32 @@ import Completed from "./components/Completed/Completed";
 import "./App.css";
 
 function App() {
+  const [task, setTask] = React.useState([
+    {
+      id: Date.now() + "" + Math.floor(Math.random() * 78),
+      text: "Go for Shopping",
+      key: Date.now(),
+      isDone: true,
+    },
+    {
+      id: Date.now() + "" + Math.floor(Math.random() * 78),
+      text: "Do Assignment",
+      key: Date.now(),
+      isDone: true,
+    },
+  ]);
+
+  function addTask(item) {
+    const tempTask = [...task];
+    tempTask.push({
+      id: item.id,
+      text: item.text,
+      key: item.key,
+      isDone: item.isDone,
+    });
+    setTask(tempTask);
+  }
+
   return (
     <div className="App">
       <Router className="App_Router">
@@ -24,13 +50,13 @@ function App() {
         <Routes>
           <Route
             path="/all"
-            element={<All/>}
+            element={<All task={task} addTask={addTask} />}
           ></Route>
           <Route
             path="/active"
-            element={<Active/>}
+            element={<Active task={task} addTask={addTask}  />}
           ></Route>
-          <Route path="/completed" element={<Completed />}></Route>
+          <Route path="/completed" element={<Completed task={task} />}></Route>
         </Routes>
         <footer className="footer">
           <p>
