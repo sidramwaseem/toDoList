@@ -1,21 +1,16 @@
 import React from "react";
+import DeleteIcon from "../../assets/delete-icon.png";
+import "./Task.css";
 
 function Task(props) {
-  const {task} = props;
-  // const taskItem = 
   return (
-    <ul className="all_task-list">
-      {task?.length > 0 ? (
-        task.map((task) => (
-          <li key={task.id}>
-            <input type="checkbox" id={task.id} />
-            <label htmlFor={task.id}>{task.text}</label>
-          </li>
-        ))
-      ) : (
-        <h2>You have no tasks!</h2>
-      )}
-    </ul>
+    <div className="task-container">
+      <div className="task-container_check">
+        <input type="checkbox" name="checkbox" id={props.id} checked={props.isDone} />
+        <label htmlFor={props.id}>{props.text}</label>
+      </div>
+      <img src={DeleteIcon} alt="delete-icon" className="delete-icon" />
+    </div>
   );
 }
 
