@@ -1,7 +1,7 @@
 import React from "react";
 import "./Form.css";
 
-function Form(props) {
+function Form() {
   return (
     <div className="Form-container">
       <form className="Form-container_form">
@@ -9,7 +9,6 @@ function Form(props) {
           type="text"
           placeholder="Enter a Task"
           name="task"
-          onChange={props.handleChange}
         />
         <button type="button">
           Add
