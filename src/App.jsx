@@ -32,6 +32,20 @@ function App() {
     setTask(tempTask);
   }
 
+  // function addItem(event) {
+    // if (this._inputElement !== "") {
+      // var newItem = {
+        // text: this._inputElement.value,
+        // id: Date.now() + "" + Math.floor(Math.random() * 78),
+        // key: Date.now(),
+        // isDone: false,
+      // };
+      // addTask(newItem);
+      // this._inputElement = "";
+    // }
+    // event.preventDefault();
+  // }
+
   return (
     <div className="App">
       <Router className="App_Router">
@@ -50,11 +64,11 @@ function App() {
         <Routes>
           <Route
             path="/all"
-            element={<All task={task} addTask={addTask} />}
+            element={<All task={task} addTask={addTask}  />}
           ></Route>
           <Route
             path="/active"
-            element={<Active task={task} addTask={addTask}  />}
+            element={<Active task={task} addTask={addTask}   />}
           ></Route>
           <Route path="/completed" element={<Completed task={task} />}></Route>
         </Routes>
