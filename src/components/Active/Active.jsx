@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "../Form/Form.jsx";
-// import Task from "../Task/Task.jsx";
+import TaskList from "../TaskList/TaskList.jsx"
 
-function Active() {
+function Active(props) {
   return (
     <div className="Active-container">
-      <Form/>
-      
+      <Form task={props.task} addTask={props.addTask}/>
+      <TaskList task={props.task} />
     </div>
   );
 }
