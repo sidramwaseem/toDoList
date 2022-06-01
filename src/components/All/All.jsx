@@ -6,7 +6,7 @@ import TaskList from "../TaskList/TaskList.jsx"
 function All(props) {
   return (
     <div className="All-container">
-      <Form task={props.task} addTask={props.addTask}/>
+      <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
       <TaskList task={props.task} />
     </div>
   );
