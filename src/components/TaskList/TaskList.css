@@ -3,3 +3,10 @@
   max-width:300px;
   margin: 5px auto;
 }
+.checked-item{
+  text-decoration: line-through;
+}
+
+.not-checked-item{
+  text-decoration:none;
+}
