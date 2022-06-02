@@ -6,7 +6,8 @@ function Active(props) {
   return (
     <div className="Active-container">
       <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
-      <TaskList task={props.task}  />
+      <TaskList task={props.task} handleCheck={props.handleCheck}
+      isChecked={props.isChecked} checked={props.checked} />
     </div>
   );
 }
