@@ -50,13 +50,36 @@ function App() {
         <Routes>
           <Route
             path="/all"
-            element={<All task={task} addTask={addTask}  />}
+            element={
+              <All
+                task={task}
+                addTask={addTask}
+                
+                
+              />
+            }
           ></Route>
           <Route
             path="/active"
-            element={<Active task={task} addTask={addTask}   />}
+            element={
+              <Active
+                task={task}
+                addTask={addTask}
+               
+               
+              />
+            }
           ></Route>
-          <Route path="/completed" element={<Completed task={task} />}></Route>
+          <Route
+            path="/completed"
+            element={
+              <Completed
+                task={task}
+               
+               
+              />
+            }
+          ></Route>
         </Routes>
         <footer className="footer">
           <p>
