@@ -32,6 +32,19 @@ function App() {
     setTask(tempTask);
   }
 
+  const [checked, setChecked] = React.useState([]);
+  const handleCheck = (event) => {
+    var updatedList = [...checked];
+    if (event.target.checked) {
+      updatedList = [...checked, event.target.value];
+    } else {
+      updatedList.splice(checked.indexOf(event.target.value), 1);
+    }
+    setChecked(updatedList);
+  };
+  var isChecked = (item) =>
+    checked.includes(item) ? "checked-item" : "not-checked-item";
+
   return (
     <div className="App">
       <Router className="App_Router">
@@ -54,8 +67,9 @@ function App() {
               <All
                 task={task}
                 addTask={addTask}
-                
-                
+                handleCheck={handleCheck}
+                isChecked={isChecked}
+                checked={checked}
               />
             }
           ></Route>
@@ -65,8 +79,9 @@ function App() {
               <Active
                 task={task}
                 addTask={addTask}
-               
-               
+                handleCheck={handleCheck}
+                isChecked={isChecked}
+                checked={checked}
               />
             }
           ></Route>
@@ -75,8 +90,9 @@ function App() {
             element={
               <Completed
                 task={task}
-               
-               
+                handleCheck={handleCheck}
+                isChecked={isChecked}
+                checked={checked}
               />
             }
           ></Route>
