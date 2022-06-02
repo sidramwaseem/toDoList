@@ -7,9 +7,9 @@ function All(props) {
   return (
     <div className="All-container">
       <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
-      <TaskList task={props.task} />
+      <TaskList task={props.task} handleCheck={props.handleCheck}
+      isChecked={props.isChecked} checked={props.checked}/>
     </div>
   );
 }
-
 export default All;
