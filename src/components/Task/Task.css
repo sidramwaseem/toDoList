@@ -19,3 +19,10 @@
 .delete-icon {
   width: 30px;
 }
+
+.checked-item{
+  text-decoration: line-through;
+}
+.not-checked-item{
+  text-decoration:none
+}
