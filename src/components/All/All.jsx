@@ -13,6 +13,7 @@ function All(props) {
     <div className="All-container">
       <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
       <TaskList
+      isDone={props.isDone}
         task={props.task}
         handleCheck={props.handleCheck}
         deleteTask={props.deleteTask}
