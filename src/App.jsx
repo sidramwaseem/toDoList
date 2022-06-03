@@ -10,16 +10,16 @@ function App() {
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Go for Shopping",
-      key: Date.now(),
-      isDone: true,
-      index:1
+      key: Date.now() + "" + Math.floor(Math.random() * 78),
+      isDone: false,
+      index: 1,
     },
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Do Assignment",
-      key: Date.now(),
-      isDone: true,
-      index:2
+      key: Date.now() + "" + Math.floor(Math.random() * 78),
+      isDone: false,
+      index: 2,
     },
   ]);
 
@@ -46,15 +46,21 @@ function App() {
     setChecked(updatedList);
   };
 
-
-  function deleteTask(id){
+  function deleteTask(id) {
     const tempTask = [...task];
     const index = tempTask.findIndex((item) => item.id === id);
     if (index < 0) return;
     tempTask.splice(index, 1);
     setTask(tempTask);
-  };
-  
+  }
+
+  const [checkClass, setCheckClass] = React.useState(false);
+
+  function toggleClass(id) {
+    if (task.id === id) {
+      setCheckClass((prevState) => !prevState);
+    }
+  }
 
   return (
     <div className="App">
@@ -75,18 +81,40 @@ function App() {
           <Route
             path="/all"
             element={
-              <All task={task} addTask={addTask} handleCheck={handleCheck} deleteTask={deleteTask} />
+              <All
+                task={task}
+                addTask={addTask}
+                handleCheck={handleCheck}
+                deleteTask={deleteTask}
+                checkClass={checkClass}
+                toggleClass={toggleClass}
+              />
             }
           ></Route>
           <Route
             path="/active"
             element={
-              <Active task={task} addTask={addTask} handleCheck={handleCheck} deleteTask={deleteTask} />
+              <Active
+                task={task}
+                addTask={addTask}
+                handleCheck={handleCheck}
+                deleteTask={deleteTask}
+                checkClass={checkClass}
+                toggleClass={toggleClass}
+              />
             }
           ></Route>
           <Route
             path="/completed"
-            element={<Completed task={task} handleCheck={handleCheck} deleteTask={deleteTask} />}
+            element={
+              <Completed
+                task={task}
+                handleCheck={handleCheck}
+                deleteTask={deleteTask}
+                checkClass={checkClass}
+                toggleClass={toggleClass}
+              />
+            }
           ></Route>
         </Routes>
         <footer className="footer">
