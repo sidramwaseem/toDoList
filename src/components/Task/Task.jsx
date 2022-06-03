@@ -4,10 +4,6 @@ import "./Task.css";
 
 function Task(props) {
 
-  const [checkClass, setCheckClass] = React.useState(false);
-  function toggleClass() {
-    setCheckClass((prevState) => !prevState);
-  }
 
   return (
     <div className="task-container">
@@ -17,11 +13,11 @@ function Task(props) {
           name="checkbox"
           id={props.id}
           onChange={props.handleCheck}
-          onClick={toggleClass}
+          onClick={props.toggleClass(props.id)}
         />
         <label
           htmlFor={props.id}
-          className={checkClass ? "checked-item" : "unchecked-item"}
+          className={props.checkClass ? "checked-item" : "unchecked-item"}
         >
           {props.text}
         </label>
