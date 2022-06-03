@@ -8,6 +8,7 @@ function Active(props) {
       <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
       { !props.checkClass &&
         <TaskList
+        isDone={props.isDone}
           task={props.task}
           handleCheck={props.handleCheck}
           deleteTask={props.deleteTask}
