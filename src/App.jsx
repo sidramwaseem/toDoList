@@ -56,8 +56,8 @@ function App() {
 
   const [checkClass, setCheckClass] = React.useState(false);
 
-  function toggleClass() {
-    setCheckClass(prevState => !prevState)
+  function toggleClass(event) {
+    setCheckClass(!event.target.checked)
   }
 
   return (
