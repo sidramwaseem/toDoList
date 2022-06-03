@@ -13,11 +13,13 @@ function Task(props) {
           name="checkbox"
           id={props.id}
           onChange={props.handleCheck}
-          onClick={props.toggleClass(props.id)}
+          onClick={props.toggleClass}
+          checked={props.checkClass}
         />
         <label
           htmlFor={props.id}
           className={props.checkClass ? "checked-item" : "unchecked-item"}
+          onClick={props.toggleClass}
         >
           {props.text}
         </label>
