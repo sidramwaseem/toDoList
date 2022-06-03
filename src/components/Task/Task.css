@@ -18,6 +18,7 @@
 
 .delete-icon {
   width: 30px;
+  cursor: pointer;
 }
 
 .checked-item{
