@@ -56,10 +56,8 @@ function App() {
 
   const [checkClass, setCheckClass] = React.useState(false);
 
-  function toggleClass(id) {
-    if (task.id === id) {
-      setCheckClass((prevState) => !prevState);
-    }
+  function toggleClass() {
+    setCheckClass(prevState => !prevState)
   }
 
   return (
@@ -82,6 +80,7 @@ function App() {
             path="/all"
             element={
               <All
+                isDone={task.isDone}
                 task={task}
                 addTask={addTask}
                 handleCheck={handleCheck}
@@ -95,6 +94,7 @@ function App() {
             path="/active"
             element={
               <Active
+                isDone={task.isDone}
                 task={task}
                 addTask={addTask}
                 handleCheck={handleCheck}
@@ -108,6 +108,7 @@ function App() {
             path="/completed"
             element={
               <Completed
+                isDone={task.isDone}
                 task={task}
                 handleCheck={handleCheck}
                 deleteTask={deleteTask}
