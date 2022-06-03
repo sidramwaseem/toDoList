@@ -6,7 +6,15 @@ function Active(props) {
   return (
     <div className="Active-container">
       <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
-      {<TaskList task={props.task} handleCheck={props.handleCheck} deleteTask={props.deleteTask} />}
+      { !props.checkClass &&
+        <TaskList
+          task={props.task}
+          handleCheck={props.handleCheck}
+          deleteTask={props.deleteTask}
+          checkClass={props.checkClass}
+          toggleClass={props.toggleClass}
+        />
+      }
     </div>
   );
 }
