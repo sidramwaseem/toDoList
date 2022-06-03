@@ -32,7 +32,6 @@ function Form(props) {
           placeholder="Enter a Task"
           name="text"
           id="isDone"
-          checked={props.isDone}
           value={form}
         />
         <button type="submit">Add</button>
