@@ -12,12 +12,14 @@ function App() {
       text: "Go for Shopping",
       key: Date.now(),
       isDone: true,
+      index:1
     },
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Do Assignment",
       key: Date.now(),
       isDone: true,
+      index:2
     },
   ]);
 
@@ -33,6 +35,7 @@ function App() {
   }
 
   const [checked, setChecked] = React.useState([]);
+
   const handleCheck = (event) => {
     var updatedList = [...checked];
     if (event.target.checked) {
@@ -42,8 +45,16 @@ function App() {
     }
     setChecked(updatedList);
   };
-  var isChecked = (item) =>
-    checked.includes(item) ? "checked-item" : "not-checked-item";
+
+
+  function deleteTask(id){
+    const tempTask = [...task];
+    const index = tempTask.findIndex((item) => item.id === id);
+    if (index < 0) return;
+    tempTask.splice(index, 1);
+    setTask(tempTask);
+  };
+  
 
   return (
     <div className="App">
@@ -64,37 +75,18 @@ function App() {
           <Route
             path="/all"
             element={
-              <All
-                task={task}
-                addTask={addTask}
-                handleCheck={handleCheck}
-                isChecked={isChecked}
-                checked={checked}
-              />
+              <All task={task} addTask={addTask} handleCheck={handleCheck} deleteTask={deleteTask} />
             }
           ></Route>
           <Route
             path="/active"
             element={
-              <Active
-                task={task}
-                addTask={addTask}
-                handleCheck={handleCheck}
-                isChecked={isChecked}
-                checked={checked}
-              />
+              <Active task={task} addTask={addTask} handleCheck={handleCheck} deleteTask={deleteTask} />
             }
           ></Route>
           <Route
             path="/completed"
-            element={
-              <Completed
-                task={task}
-                handleCheck={handleCheck}
-                isChecked={isChecked}
-                checked={checked}
-              />
-            }
+            element={<Completed task={task} handleCheck={handleCheck} deleteTask={deleteTask} />}
           ></Route>
         </Routes>
         <footer className="footer">
