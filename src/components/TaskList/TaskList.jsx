@@ -13,6 +13,7 @@ function TaskList(props) {
             key={task.key}
             text={task.text}
             id={task.id}
+            isDone={props.isDone}
             handleCheck={props.handleCheck}
             deleteTask={props.deleteTask}
             checkClass={props.checkClass}
