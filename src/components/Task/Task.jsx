@@ -10,7 +10,7 @@ function Task(props) {
       <div className="task-container_check">
         <input
           type="checkbox"
-          name="checkbox"
+          name="isDone"
           id={props.id}
           onChange={props.handleCheck}
           onClick={props.toggleClass}
