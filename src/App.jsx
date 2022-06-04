@@ -6,22 +6,22 @@ import Completed from "./components/Completed/Completed";
 import "./App.css";
 
 function App() {
+  /* Setting up state for the tasks */
+
   const [task, setTask] = React.useState([
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Go for Shopping",
-      key: Date.now() + "" + Math.floor(Math.random() * 78),
-      isDone: false,
-      index: 1,
+      key: 1,
     },
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Do Assignment",
-      key: Date.now() + "" + Math.floor(Math.random() * 78),
-      isDone: false,
-      index: 2,
+      key: 2,
     },
   ]);
+
+  /*Function to add a new Task in the list */
 
   function addTask(item) {
     const tempTask = [...task];
@@ -29,12 +29,13 @@ function App() {
       id: item.id,
       text: item.text,
       key: item.key,
-      isDone: item.isDone,
     });
     setTask(tempTask);
   }
 
-  const [checked, setChecked] = React.useState();
+  /* State to handle the task being written in the Input of the Form */
+
+  const [checked, setChecked] = React.useState([]);
 
   const handleCheck = (event) => {
     var updatedList = [...checked];
@@ -46,6 +47,8 @@ function App() {
     setChecked(updatedList);
   };
 
+  /* Function to delete the task from the TaskList */
+
   function deleteTask(id) {
     const tempTask = [...task];
     const index = tempTask.findIndex((item) => item.id === id);
@@ -54,10 +57,23 @@ function App() {
     setTask(tempTask);
   }
 
-  const [checkClass, setCheckClass] = React.useState(false);
+  /* State to toggle the classes when the checkbox is being Clicked */
 
-  function toggleClass() {
-    setCheckClass((prevClass) => !prevClass);
+  /* 
+  const [checkClass, setCheckClass] = React.useState(false);
+  function toggleClass(){
+    setCheckClass(prevClass => !prevClass)
+  }
+  */
+
+  const [checkClass, setCheckClass] = React.useState([]);
+
+  function toggleClass(id) {
+    for (let i = 0; i < task.length; i++) {
+      if (task[i].id === id) {
+        setCheckClass((prevClass) => !prevClass);
+      }
+    }
   }
 
   return (
@@ -80,7 +96,6 @@ function App() {
             path="/all"
             element={
               <All
-                isDone={task.isDone}
                 task={task}
                 addTask={addTask}
                 handleCheck={handleCheck}
@@ -94,7 +109,6 @@ function App() {
             path="/active"
             element={
               <Active
-                isDone={task.isDone}
                 task={task}
                 addTask={addTask}
                 handleCheck={handleCheck}
@@ -108,7 +122,6 @@ function App() {
             path="/completed"
             element={
               <Completed
-                isDone={task.isDone}
                 task={task}
                 handleCheck={handleCheck}
                 deleteTask={deleteTask}
