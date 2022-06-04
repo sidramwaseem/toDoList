@@ -3,18 +3,16 @@ import Task from "../Task/Task.jsx";
 import "./TaskList.css";
 
 function TaskList(props) {
-  const {task} = props
+  const { task } = props;
   return (
     <div className="tasklist-container">
       <div className="tasklist-conatiner_tasklist">
         {task.map((task, index) => (
           <Task
-          index={index}
             task={props.task}
-            key={task.key}
+            key={index}
             text={task.text}
             id={task.id}
-            isDone={props.isDone}
             handleCheck={props.handleCheck}
             deleteTask={props.deleteTask}
             checkClass={props.checkClass}
