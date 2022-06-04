@@ -34,7 +34,7 @@ function App() {
     setTask(tempTask);
   }
 
-  const [checked, setChecked] = React.useState([]);
+  const [checked, setChecked] = React.useState();
 
   const handleCheck = (event) => {
     var updatedList = [...checked];
@@ -56,8 +56,8 @@ function App() {
 
   const [checkClass, setCheckClass] = React.useState(false);
 
-  function toggleClass(event) {
-    setCheckClass(!event.target.checked)
+  function toggleClass() {
+    setCheckClass((prevClass) => !prevClass);
   }
 
   return (
