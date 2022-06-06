@@ -9,6 +9,7 @@ function TaskList(props) {
       <div className="tasklist-conatiner_tasklist">
         {task.map((task, index) => (
           <Task
+          index={index}
             task={props.task}
             key={index}
             text={task.text}
