@@ -57,24 +57,27 @@ function App() {
     setTask(tempTask);
   }
 
-  /* State to toggle the classes when the checkbox is being Clicked */
+  /* State to toggle between the classes when the task is checked*/
 
-  /* 
+ 
   const [checkClass, setCheckClass] = React.useState(false);
   function toggleClass(){
     setCheckClass(prevClass => !prevClass)
-  }
-  */
+  } 
+ 
 
-  const [checkClass, setCheckClass] = React.useState([]);
+ /* const [checkClass, setCheckClass] = React.useState([]);
 
-  function toggleClass(id) {
+  function toggleClass(index) {
     for (let i = 0; i < task.length; i++) {
-      if (task[i].id === id) {
+      if (task[i].index === index) {
+        checkClass.push(
+          task.isDone,
+        )
         setCheckClass((prevClass) => !prevClass);
       }
     }
-  }
+  } */
 
   return (
     <div className="App">
