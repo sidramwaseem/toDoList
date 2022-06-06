@@ -8,13 +8,13 @@ function Task(props) {
       <div className="task-container_check">
         <input
           type="checkbox"
-          id={props.id}
+          id={props.index}
           checked={props.checkClass}
           onChange={props.handleCheck}
-          onClick={() => props.toggleClass(props.id)}
+          onClick={() => props.toggleClass(props.index)}
         />
         <label
-          htmlFor={props.id}
+          htmlFor={props.index}
           className={props.checkClass ? "checked-item" : "unchecked-item"}
         >
           <span>{props.text}</span>
