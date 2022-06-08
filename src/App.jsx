@@ -12,12 +12,12 @@ function App() {
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Go for Shopping",
-      key: 1,
+      isCheck: false,
     },
     {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "Do Assignment",
-      key: 2,
+      isCheck: false,
     },
   ]);
 
@@ -29,6 +29,7 @@ function App() {
       id: item.id,
       text: item.text,
       key: item.key,
+      isCheck: item.isCheck,
     });
     setTask(tempTask);
   }
@@ -59,25 +60,16 @@ function App() {
 
   /* State to toggle between the classes when the task is checked*/
 
- 
-  const [checkClass, setCheckClass] = React.useState(false);
-  function toggleClass(){
-    setCheckClass(prevClass => !prevClass)
-  } 
- 
+  // const [checkClass, setCheckClass] = React.useState([]);
 
- /* const [checkClass, setCheckClass] = React.useState([]);
-
-  function toggleClass(index) {
-    for (let i = 0; i < task.length; i++) {
-      if (task[i].index === index) {
-        checkClass.push(
-          task.isDone,
-        )
-        setCheckClass((prevClass) => !prevClass);
-      }
-    }
-  } */
+  // function toggleClass(index) {
+  // for (let i = 0; i < task.length; i++) {
+  // if (task[i].index === index) {
+  // checkClass.push(task.isDone);
+  // setCheckClass((prevClass) => !prevClass);
+  // }
+  // }
+  // }
 
   return (
     <div className="App">
@@ -103,8 +95,6 @@ function App() {
                 addTask={addTask}
                 handleCheck={handleCheck}
                 deleteTask={deleteTask}
-                checkClass={checkClass}
-                toggleClass={toggleClass}
               />
             }
           ></Route>
@@ -116,8 +106,6 @@ function App() {
                 addTask={addTask}
                 handleCheck={handleCheck}
                 deleteTask={deleteTask}
-                checkClass={checkClass}
-                toggleClass={toggleClass}
               />
             }
           ></Route>
@@ -128,8 +116,6 @@ function App() {
                 task={task}
                 handleCheck={handleCheck}
                 deleteTask={deleteTask}
-                checkClass={checkClass}
-                toggleClass={toggleClass}
               />
             }
           ></Route>
