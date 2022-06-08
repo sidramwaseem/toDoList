@@ -4,6 +4,7 @@ import Form from "../Form/Form.jsx";
 import TaskList from "../TaskList/TaskList.jsx";
 
 function All(props) {
+  console.log("YYYYYYYYYYYYYYYYY", props);
   return (
     <div className="All-container">
       <Form task={props.task} addTask={props.addTask} addItem={props.addItem} />
@@ -11,8 +12,6 @@ function All(props) {
         task={props.task}
         handleCheck={props.handleCheck}
         deleteTask={props.deleteTask}
-        checkClass={props.checkClass}
-        toggleClass={props.toggleClass}
       />
     </div>
   );
