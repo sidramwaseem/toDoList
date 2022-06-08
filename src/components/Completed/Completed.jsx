@@ -4,11 +4,10 @@ import TaskList from "../TaskList/TaskList.jsx";
 function Completed(props) {
   return (
     <div>
-      {props.checkClass && (
+      {props.check && (
         <TaskList
           task={props.task}
           deleteTask={props.deleteTask}
-          checkClass={props.checkClass}
         />
       )}
     </div>
