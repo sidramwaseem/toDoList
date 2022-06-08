@@ -2,12 +2,10 @@ import React from "react";
 import "./Form.css";
 
 function Form(props) {
+  const [form, setFormData] = React.useState("");
 
-
-  const [form, setFormData] = React.useState("")
-
-  function handleChange(e){
-    setFormData(prevData => e.target.value )
+  function handleChange(e) {
+    setFormData((prevData) => e.target.value);
   }
 
   function addItem(event) {
@@ -15,8 +13,7 @@ function Form(props) {
       var newItem = {
         text: form,
         id: Date.now() + "" + Math.floor(Math.random() * 78),
-        key: Date.now(),
-        isDone: false,
+        isCheck: false,
       };
       props.addTask(newItem);
     }
