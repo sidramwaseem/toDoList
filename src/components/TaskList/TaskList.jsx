@@ -9,15 +9,13 @@ function TaskList(props) {
       <div className="tasklist-conatiner_tasklist">
         {task.map((task, index) => (
           <Task
-          index={index}
-            task={props.task}
+            index={index}
+            task={task}
             key={index}
             text={task.text}
             id={task.id}
             handleCheck={props.handleCheck}
             deleteTask={props.deleteTask}
-            checkClass={props.checkClass}
-            toggleClass={props.toggleClass}
           />
         ))}
       </div>
