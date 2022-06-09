@@ -31,6 +31,7 @@ function App() {
       key: item.key,
       isCheck: item.isCheck,
     });
+    checkClass.push(item.isCheck)
     setTask(tempTask);
   }
 
@@ -70,6 +71,13 @@ function App() {
   // }
   // }
   // }
+
+  const [checkClass, setCheckClass] = React.useState([false,false]);
+
+  console.log(checkClass)
+
+  function reverseClass(id) {
+  }
 
   return (
     <div className="App">
